@@ -32,7 +32,7 @@ $form = ["name"=>"","email"=>"","phone"=>"","message"=>""];
 $errors = [];
 $success = false;
 
-session_start();
+// CSRF token (bootstrap.php already initializes session)
 if (!isset($_SESSION["csrf_token"])) {
   $_SESSION["csrf_token"] = bin2hex(random_bytes(32));
 }
@@ -356,5 +356,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <!-- Histats.com  END  -->
 </body>
 </html>
+
 
 
